@@ -67,7 +67,7 @@ describe('UF Directory Server Unit Tests', function() {
 			// Finally, call "done();" to move onto the next test
         	bodyData = JSON.parse(body);
 			//console.log(response);
-        	assert.deepEqual(response, response)
+        	assert.deepEqual(listings, bodyData)
 			done();
       });
     });
@@ -80,6 +80,7 @@ describe('UF Directory Server Unit Tests', function() {
         
         // For the last assertion, check that the string output is the same message server.js outputs when a listing is missing:
         // Finally, call "done();" to finish!
+		assert.strictEqual('404, Page Not Found', body);
 		done();
       });
     });
