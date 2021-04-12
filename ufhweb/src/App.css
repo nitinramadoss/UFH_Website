@@ -55,6 +55,7 @@ section .content h1 {
 .mountains {
   display: flex;
   position: relative;
+  background-attachment: fixed;
   background-color: rgba(189,189,189,1);
   background-image: url('./img/peaks_bg1.png');
   background-blend-mode: overlay;
