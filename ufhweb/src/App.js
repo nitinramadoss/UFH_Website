@@ -15,6 +15,7 @@ import Rocket from './img/rocket.png';
 import Moon from './img/moon.png';
 import Star from './img/star.png';
 import Cloud from './img/cloud.png';
+import Collage from './img/ufhcollage.png';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -136,11 +137,34 @@ function App() {
       </section>
 
       <section>
-        <Fade up>
+        <Fade up cascade>
           <div className = "mediumText">
-            MAX LEVEL HACKING
+            Welcome
           </div>
         </Fade>
+      </section>
+
+      <section>
+        <div className = "content"> 
+          <Reveal effect="typewriter" duration = {1500}>
+            <h1>Who are we?</h1>
+          </Reveal>   
+
+            <Zoom delay = {500}>
+              <p id="about">
+                University of Florida's Hackathoners Club - "To The Peak"
+                If you want brainstorming sessions, team formation assistance, 
+                and technical workshops to enhance your hackathon experience, 
+                UF Hackathoners is the group for you. We are an ACM SIG dedicated 
+                to providing UF students the resources they need to participate and 
+                compete in hackathons! We arrange teams for MLH and Pinnacle hackathons.
+              </p>
+            </Zoom>
+
+            <Fade left delay = {1000}>
+              <img src={Collage} alt="" id="collage"/>
+            </Fade>
+        </div>
       </section>
 
       <section>
@@ -151,6 +175,7 @@ function App() {
           <YoutubeCarousel/>          
         </div>
       </section>
+      
     </div>
   ); 
 }

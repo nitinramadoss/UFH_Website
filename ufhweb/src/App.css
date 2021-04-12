@@ -31,6 +31,7 @@ section {
 
 section .content {
   max-width: 80%;
+  text-align: center;
 }
 
 section .content h1 {
@@ -39,9 +40,6 @@ section .content h1 {
   padding: 0;
   display: inline-block;
   font-size: 3em;
-  transition: 0.5s;
-  transform-origin: left;
-  transform: scaleX(1);
 }
 
 .bigText {
@@ -145,6 +143,14 @@ section .content h1 {
   height: 100vh;
 }
 
+#about {
+  width: 50vw;
+}
+
+#collage {
+  position: relative;
+  width: 30vw;
+}
 
 .item {
   display: flex;
