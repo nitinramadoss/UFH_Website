@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component, useEffect } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { Navbar } from 'react-bootstrap';
 import Carousel from "react-elastic-carousel";
 import Item from "./Item";
@@ -7,9 +7,11 @@ import ReactPlayer from 'react-player/youtube'
 import Fade from 'react-reveal/Fade';
 import Reveal from 'react-reveal/Reveal'
 import Slide from 'react-reveal/Slide';
-import LeftMountain from './img/mountain1.png'
-import RightMountain from './img/mountain2.png'
-import Logo from './img/logo.png'
+import LeftMountain from './img/mountain1.png';
+import RightMountain from './img/mountain2.png';
+import Logo from './img/logo.png';
+import Rocket from './img/rocket.png';
+import Moon from './img/moon.png'
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -18,8 +20,34 @@ const breakPoints = [
   { width: 1200, itemsToShow: 4 },
 ];
 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+
 function App() { 
   const [offset, setOffset]= React.useState(0);
+  const { height, width } = useWindowDimensions();
   const handleScroll = () => setOffset(window.pageYOffset);
 
   useEffect(() => {
@@ -44,6 +72,12 @@ function App() {
       </section>
 
       <section className = "grad1">
+        <img src={Rocket} alt="" id="rocket" 
+          style={{transform: `translate(${5-offset}px, ${5-offset}px) rotate(-45deg)`}}/>
+
+        <img src={Moon} alt="" id="moon" 
+                  style={{transform: `translate(${((5 + offset) < width*0.5) ? 5+offset : width*0.5}px, ${0}px)`}}/>
+
         <Fade up>
           <div className = "bigText">
             TO
