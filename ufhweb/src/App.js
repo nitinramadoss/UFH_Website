@@ -5,13 +5,16 @@ import Carousel from "react-elastic-carousel";
 import Item from "./Item";
 import ReactPlayer from 'react-player/youtube'
 import Fade from 'react-reveal/Fade';
+import Zoom from 'react-reveal/Zoom'
 import Reveal from 'react-reveal/Reveal'
 import Slide from 'react-reveal/Slide';
 import LeftMountain from './img/mountain1.png';
 import RightMountain from './img/mountain2.png';
 import Logo from './img/logo.png';
 import Rocket from './img/rocket.png';
-import Moon from './img/moon.png'
+import Moon from './img/moon.png';
+import Star from './img/star.png';
+import Cloud from './img/cloud.png';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -78,7 +81,12 @@ function App() {
         <img src={Moon} alt="" id="moon" 
                   style={{transform: `translate(${((5 + offset) < width*0.5) ? 5+offset : width*0.5}px, ${0}px)`}}/>
 
-        <Fade up>
+        <Zoom>
+          <img src={Star} alt="" id="star1"/>
+          <img src={Star} alt="" id="star2"/>
+        </Zoom>
+
+        <Fade up cascade>
           <div className = "bigText">
             TO
           </div>
@@ -86,7 +94,11 @@ function App() {
       </section>
 
       <section className = "grad2">
-        <Fade up>
+        <Fade left>
+          <img src={Cloud} alt="" id="cloud1"/>
+        </Fade>
+
+        <Fade up cascade>
           <div className = "bigText">
             THE
           </div>
@@ -94,7 +106,15 @@ function App() {
       </section>
 
       <section className = "grad3">
-        <Fade up>
+        <Fade left>
+          <img src={Cloud} alt="" id="cloud2"/>
+        </Fade>
+
+        <Fade right>
+          <img src={Cloud} alt="" id="cloud3"/>
+        </Fade>
+
+        <Fade up cascade>
           <div className = "bigText">
             PEAK
           </div>
