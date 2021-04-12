@@ -135,7 +135,7 @@ function App() {
         </Slide>
       </section>
 
-      <section className = "grad4">
+      <section>
         <Fade up>
           <div className = "mediumText">
             MAX LEVEL HACKING
