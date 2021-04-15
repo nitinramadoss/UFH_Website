@@ -1,0 +1,188 @@
+body {
+  font-family: consolas;
+}
+
+section {
+  position: relative;
+  display: flex;
+  color: #fff;
+  background-color: #000000;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.grad1 {
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(27,27,27,1) 35%, rgba(63,63,63,1) 100%);
+}
+
+.grad2 {
+  background: linear-gradient(180deg, rgba(63,63,63,1) 0%, rgba(90,90,90,1) 35%, rgba(126,126,126,1) 100%);
+}
+
+.grad3 {
+  background: linear-gradient(180deg, rgba(126,126,126,1) 0%, rgba(153,153,153,1) 35%, rgba(189,189,189,1) 100%);
+}
+
+.grad4 {
+  background: linear-gradient(180deg, rgba(189,189,189,1) 0%, rgba(126,126,126,1) 35%, rgba(0,0,0,1) 100%);
+}
+
+section .content {
+  max-width: 80%;
+  text-align: center;
+}
+
+section .content h1 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-size: 3em;
+}
+
+.bigText {
+  font-size: 16rem;
+}
+
+.mediumText {
+  font-size: 8rem;
+}
+
+.mountains {
+  display: flex;
+  position: relative;
+  background-attachment: fixed;
+  background-color: rgba(189,189,189,1);
+  background-image: url('./img/peaks_bg1.png');
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mountains::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 20vh;
+  background: rgba(189,189,189,1);
+  top: 0%;
+}
+
+#mountain-left {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  width: 80vw;
+}
+
+#mountain-right {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  width: 80vw;
+}
+
+#logo {
+  height: 100vh;
+}
+
+#rocket {
+  width: 15vw;
+  position: absolute;
+  bottom: 70vh;
+  left: 70vw;
+}
+
+
+#moon {
+  width: 15vw;
+  position: absolute;
+  top: 20vh;
+  left: 20vw;
+}
+
+#star1 {
+  width: 5vw;
+  position: absolute;
+  top: 20vh;
+  left: 20vw;
+}
+
+#star2 {
+  width: 10vw;
+  position: absolute;
+  bottom: 10vh;
+  right: 40vw;
+}
+
+#cloud1 {
+  width: 20%;
+  position: absolute;
+  bottom: 10vh;
+  left: 10vw;
+}
+
+#cloud2 {
+  width: 10%;
+  position: absolute;
+  bottom: 10vh;
+  left: 10vw;
+}
+
+#cloud3 {
+  width: 30%;
+  position: absolute;
+  top: 10vh;
+  right: 5vw;
+}
+
+#carousel {
+  width: 100%;
+  height: 100vh;
+}
+
+#about {
+  width: 50vw;
+}
+
+#collage {
+  position: relative;
+  width: 30vw;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 100%;
+  background-color: #00008B;
+  color: #fff;
+  margin: 0 15px;
+  font-size: 4em;
+}
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 7.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
