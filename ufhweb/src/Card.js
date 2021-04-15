@@ -5,7 +5,6 @@ export default function Card() {
     cardObjects.sort((a, b) => (a.mlh_points < b.mlh_points) ? 1: (a.mlh_points === b.mlh_points) ? ((a.wins < b.wins) ? 1: -1) : -1)
     return (
     <>
-        Hackathon Leaderboard
         <div class="container">
             <table>
                 <thead>
