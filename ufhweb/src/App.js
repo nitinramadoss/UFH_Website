@@ -1,12 +1,13 @@
 import './App.css';
+import './Card.css'
 import React, { Component, useEffect, useState } from 'react';
 import { Navbar } from 'react-bootstrap';
 import Carousel from "react-elastic-carousel";
 import Item from "./Item";
 import ReactPlayer from 'react-player/youtube'
 import Fade from 'react-reveal/Fade';
-import Zoom from 'react-reveal/Zoom'
-import Reveal from 'react-reveal/Reveal'
+import Zoom from 'react-reveal/Zoom';
+import Reveal from 'react-reveal/Reveal';
 import Slide from 'react-reveal/Slide';
 import LeftMountain from './img/mountain1.png';
 import RightMountain from './img/mountain2.png';
@@ -16,6 +17,8 @@ import Moon from './img/moon.png';
 import Star from './img/star.png';
 import Cloud from './img/cloud.png';
 import Collage from './img/ufhcollage.png';
+import Leaderboard from './Card';
+import GoogleCalendar from './GoogleCalendar';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -137,7 +140,7 @@ function App() {
       </section>
 
       <section>
-        <Fade up cascade>
+        <Fade up>
           <div className = "mediumText">
             Welcome
           </div>
@@ -146,9 +149,9 @@ function App() {
 
       <section>
         <div className = "content"> 
-          <Reveal effect="typewriter" duration = {1500}>
+          <Fade right>
             <h1>Who are we?</h1>
-          </Reveal>   
+          </Fade>   
 
             <Zoom delay = {500}>
               <p id="about">
@@ -161,7 +164,7 @@ function App() {
               </p>
             </Zoom>
 
-            <Fade left delay = {1000}>
+            <Fade up delay = {1000}>
               <img src={Collage} alt="" id="collage"/>
             </Fade>
         </div>
@@ -169,11 +172,36 @@ function App() {
 
       <section>
         <div className = "content"> 
-          <Reveal effect="typewriter" duration = {1500}>
+          <Fade right>
             <h1>Our Projects</h1>
-          </Reveal>       
+          </Fade>       
           <YoutubeCarousel/>          
         </div>
+      </section>
+
+      <section>
+        <div className = "content"> 
+          <Fade right>
+            <h1>Leaderboard</h1>
+          </Fade>    
+
+          <Fade up delay = {1000}>
+           <Leaderboard/>      
+          </Fade>   
+        </div>
+      </section>
+
+      <section>
+        <div className = "content"> 
+          <Fade right>
+            <h1>Our Events</h1>
+          </Fade>    
+
+          <GoogleCalendar/>
+        </div>
+      </section>
+
+      <section>
       </section>
       
     </div>
