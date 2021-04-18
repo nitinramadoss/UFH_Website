@@ -197,7 +197,7 @@ function App() {
             <h1>Our Events</h1>
           </Fade>    
 
-          <GoogleCalendar/>
+          {/* <GoogleCalendar/> */}
         </div>
       </section>
 
