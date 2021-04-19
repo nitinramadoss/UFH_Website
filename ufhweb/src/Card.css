@@ -14,10 +14,11 @@ table {
 	margin-top: 24px;
 }
 
-tr:hover{
-    background-color: rgba(255,255,255,0.3);
+tr:hover:not(:first-child) {	
+	background-color: rgba(255,255,255,0.3);
     transition-duration: 0.15s;
 }
+
 
 th, td {
     text-align: left;

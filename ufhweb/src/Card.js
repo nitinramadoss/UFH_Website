@@ -1,20 +1,27 @@
 import React from 'react'
 
-export default function Card() {
-    var cardObjects = [{name: "Gabe Escano", mlh_points: 100, wins: 5}, {name: "Joe Wilson", mlh_points: 100, wins: 4}, {name: "Zeke Kauffman", mlh_points: 100, wins: 3}, {name: "Sohil", mlh_points: 30, wins: 1}, {name: "Nitin Ramadoss", mlh_points: 300, wins: 10}]
-    cardObjects.sort((a, b) => (a.mlh_points < b.mlh_points) ? 1: (a.mlh_points === b.mlh_points) ? ((a.wins < b.wins) ? 1: -1) : -1)
+export default function Card(data) {  
+    var cardObjects = data;
+    console.log(JSON.parse(cardObjects))
+    //cardObjects.sort((a, b) => (a.mlh_points < b.mlh_points) ? 1: (a.mlh_points === b.mlh_points) ? ((a.wins < b.wins) ? 1: -1) : -1)
+
     return (
     <>
         <div class="container">
             <table>
-                <thead>
-                    <th>Rank</th>
-                    <th>Name</th>
-                    <th>Wins</th>
-                    <th>MLH Points</th>
-                </thead>
                 <tbody>
+                {/* {cardObjects.map(function(obj, i) {
+                    return <tr> <td> {obj.name}</td> <td> {obj.wins}</td></tr>
+                })} */}
+
                     <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Wins</th>
+                        <th>MLH Points</th>
+                    </tr>
+
+                    {/* <tr>
                         <td>#1</td>
                         <td>{cardObjects[0].name}</td>
                         <td>{cardObjects[0].wins}</td>
@@ -43,7 +50,7 @@ export default function Card() {
                         <td>{cardObjects[4].name}</td>
                         <td>{cardObjects[4].wins}</td>
                         <td>{cardObjects[4].mlh_points}</td>
-                    </tr>
+                    </tr> */}
                 </tbody>
             </table>
         </div>

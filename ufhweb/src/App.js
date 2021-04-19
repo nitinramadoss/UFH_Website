@@ -20,6 +20,8 @@ import Collage from './img/ufhcollage.png';
 import Leaderboard from './Card';
 import GoogleCalendar from './GoogleCalendar';
 
+const axios = require('axios').default;
+
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 550, itemsToShow: 2 },
@@ -53,9 +55,17 @@ function useWindowDimensions() {
 }
 
 function App() { 
+  const [memberData, setData] = useState([]);
   const [offset, setOffset]= React.useState(0);
   const { height, width } = useWindowDimensions();
   const handleScroll = () => setOffset(window.pageYOffset);
+
+  useEffect(() => {
+    axios.get('http://localhost:8000/loadLeaderboard').then((response) => 
+    {
+      setData({ memberData: response.data});
+    }).catch( (e) => console.log(e))
+  }, [])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -186,7 +196,7 @@ function App() {
           </Fade>    
 
           <Fade up delay = {1000}>
-           <Leaderboard/>      
+            {(memberData == undefined || memberData.length == 0)? <div/> : <Leaderboard data={memberData}/>}   
           </Fade>   
         </div>
       </section>
