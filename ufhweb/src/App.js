@@ -212,7 +212,6 @@ function App() {
             server="803404321252835378"
             channel="803404321252835382">
           </WidgetBot>
-          {/* <GoogleCalendar/> */}
         </div>
       </section>
     </div>
