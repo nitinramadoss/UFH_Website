@@ -21,6 +21,11 @@ app.use(function(req, res, next) {
 	   next();
 }});
 
+
+app.get('/', async (req, res) => {
+	res.send("Get req to app");
+})
+
 app.get('/loadLeaderboard', async (req, res) => {
 	let documents = await queryDB();
 
@@ -38,9 +43,9 @@ app.post('/sendData', function (req, res) {
 	res.send('POST request to the homepage')
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.listen(process.env.PORT || port, () => {
+	console.log(`Listening on ${port}`);
+});
 
 async function queryDB() {
 	let documents = [];
