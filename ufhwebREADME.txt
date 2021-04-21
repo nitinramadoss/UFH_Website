@@ -7,7 +7,7 @@ UFH Club Website
 Website for the UFH club for public use.
 
 Installation:
-Dependancies listed under "ufhweb/package.json" https://github.com/MannyKlam/UFH_Website/blob/main/ufhweb/package.json
+Dependencies listed under "ufhweb/package.json" https://github.com/MannyKlam/UFH_Website/blob/main/ufhweb/package.json
 
 "@emotion/react": "^11.1.5",
 "@ericz1803/react-google-calendar": "^4.0.3",
@@ -34,5 +34,5 @@ How to run application locally:
 3. "npm install" in ufhweb directory to set up React
 4. "npm start" on port of choice
 
-The current version of the website is incomplete and still needs to implement the functional Google Calendar from "@ericz1903/react-google-calendar," (The Google Calendar is instead implented externally, with a link to the public Calendar in the club's Discord channel). 
+The current version of the website is incomplete and still needs to implement the functional Google Calendar from "@ericz1903/react-google-calendar," (The Google Calendar is instead implemented externally, with a link to the public Calendar in the club's Discord channel). 
 Aside from this, the website is completely functional as per the client's request, though contributions from club members are certainly appreciated!
