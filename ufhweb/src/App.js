@@ -3,6 +3,7 @@ import './Card.css'
 import React, { Component, useEffect, useState } from 'react';
 import { Navbar } from 'react-bootstrap';
 import Carousel from "react-elastic-carousel";
+import WidgetBot from '@widgetbot/react-embed'
 import Item from "./Item";
 import ReactPlayer from 'react-player/youtube'
 import Fade from 'react-reveal/Fade';
@@ -204,23 +205,23 @@ function App() {
       <section>
         <div className = "content"> 
           <Fade right>
-            <h1>Our Events</h1>
+            <h1>Announcements and Events</h1>
           </Fade>    
 
+          <WidgetBot className = "widgetBot"
+            server="803404321252835378"
+            channel="803404321252835382">
+          </WidgetBot>
           {/* <GoogleCalendar/> */}
         </div>
       </section>
-
-      <section>
-      </section>
-      
     </div>
   ); 
 }
 
 function YoutubeCarousel() {
   return (
-    <Carousel breakPoints={breakPoints} id = "carousel">
+    <Carousel breakPoints={breakPoints} className = "carousel">
         <Item>
           <ReactPlayer url='https://www.youtube.com/watch?v=0Hh8VspdDWs&feature=emb_imp_woyt' />
         </Item>
