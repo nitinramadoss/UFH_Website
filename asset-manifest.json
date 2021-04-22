@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/UFH_Website/static/css/main.f848da1e.chunk.css",
-    "main.js": "/UFH_Website/static/js/main.d36d0f77.chunk.js",
-    "main.js.map": "/UFH_Website/static/js/main.d36d0f77.chunk.js.map",
+    "main.js": "/UFH_Website/static/js/main.c91ae962.chunk.js",
+    "main.js.map": "/UFH_Website/static/js/main.c91ae962.chunk.js.map",
     "runtime-main.js": "/UFH_Website/static/js/runtime-main.54fc104f.js",
     "runtime-main.js.map": "/UFH_Website/static/js/runtime-main.54fc104f.js.map",
     "static/css/2.e87ee845.chunk.css": "/UFH_Website/static/css/2.e87ee845.chunk.css",
@@ -28,6 +28,6 @@
     "static/css/2.e87ee845.chunk.css",
     "static/js/2.92afe404.chunk.js",
     "static/css/main.f848da1e.chunk.css",
-    "static/js/main.d36d0f77.chunk.js"
+    "static/js/main.c91ae962.chunk.js"
   ]
 }
