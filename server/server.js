@@ -6,7 +6,7 @@ const port = 8000
 const uri =
   "mongodb+srv://nitinramadoss:ufh123@cluster0.u5z4w.mongodb.net/UFH_Website?retryWrites=true&writeConcern=majority";
 
-const client = new MongoClient(uri);
+const client = new MongoClient(uri, { useUnifiedTopology: true });
 
 app.use(express.json()); 
 
@@ -31,8 +31,10 @@ app.get('/loadLeaderboard', async (req, res) => {
 
 	var result = [];
 
-	for (var i = 0; i < documents.length; i++) {
-		result.push({name: document[i].name, wins: document[i].wins, mlh_points: document[i].mlh_points});	
+	if (documents != null) {
+		for (var i = 0; i < documents.length; i++) {
+			result.push({name: documents[i].name, wins: documents[i].wins, mlh_points: documents[i].mlh_points});	
+		}
 	}
 
 	res.send(JSON.stringify(result));
@@ -48,24 +50,20 @@ app.listen(process.env.PORT || port, () => {
 });
 
 async function queryDB() {
-	let documents = [];
+	let documents;
 
 	try {
-	  await client.connect();
-  
-	  const database = client.db('leaderboard');
-	  const points = database.collection('member_points');
-  
-	  const query = { name : "Aditya Nair"};
-	  document = await points.find().toArray();
+		await client.connect();
+	
+		const database = client.db('leaderboard');
+		const points = database.collection('member_points');
 
-	  console.log(document);
+		documents = await points.find().toArray();
   
-	  return document;
-	} finally {
-	  // Ensures that the client will close when you finish/error
-	  await client.close();
+		console.log(documents);
+	} catch(err) {
+		console.log(err);
 	}
 
-	return null;
+	return documents;
 }
