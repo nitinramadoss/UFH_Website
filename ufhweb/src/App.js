@@ -62,7 +62,7 @@ function App() {
   const handleScroll = () => setOffset(window.pageYOffset);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/loadLeaderboard').then((response) => 
+    axios.get('https://ufhackathoners.herokuapp.com/loadLeaderboard').then((response) => 
     {
       setData({ memberData: response.data});
     }).catch( (e) => console.log(e))
